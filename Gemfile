@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.3'
 gem 'mysql2'
 gem 'sass-rails', '~> 5.0'
@@ -19,7 +18,7 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
-gem 'activeresource'
+gem 'activeresource'  
 
 gem 'therubyracer'
 
