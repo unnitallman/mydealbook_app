@@ -18,7 +18,10 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
-gem 'activeresource'  
+gem 'activeresource'
+
+gem 'wicked_pdf' 
+gem 'wkhtmltopdf-binary' 
 
 gem 'therubyracer'
 

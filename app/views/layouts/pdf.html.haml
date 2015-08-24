@@ -1,0 +1,44 @@
+!!! 5
+%html(lang="en")
+  %head
+    = wicked_pdf_stylesheet_link_tag "application", :media => "all"
+    = yield :head
+    = wicked_pdf_javascript_include_tag "application"
+
+
+  %body
+    .navbar.navbar-default.navbar-static-top
+      .container
+        %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand(href="#") 
+          %i{class:'fa fa-linux'}
+          MyDealBook
+
+
+        .navbar-collapse.collapse.navbar-responsive-collapse
+          %ul.nav.navbar-nav
+            %li= link_to "Link 1", "/path1"
+            %li= link_to "Link 2", "/path2"
+            %li= link_to "Link 3", "/path3"
+            %li= link_to "Link 3", "/path3"
+
+    .container
+      .row
+        .col-lg-9
+          = bootstrap_flash
+          = yield
+        .col-lg-3
+          .well.sidebar-nav
+            %h3 Search
+            %ul.nav.nav-list
+              %li.nav-header Sidebar
+              %li= link_to "Link 1", "/path1"
+              %li= link_to "Link 2", "/path2"
+              %li= link_to "Link 3", "/path3"
+      %footer
+        %p &copy; Company 2015
+
+      = yield :javascript
