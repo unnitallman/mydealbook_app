@@ -4,6 +4,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Access Control
+  include ActsAsAuthoritah::Core
+  acts_as_authoritah Rails.root.join('config/access_rights/')
+
+  def usertype(options = {})
+    admin? ? 'admin' : (agent? ? 'agent' : (new_record? ? 'anonymous' : nil))
+  end
+
   def admin?
     role_id == Role.list.admin
   end

@@ -260,3 +260,14 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
+
+module Devise
+  module Controllers
+    module Helpers
+      def present_user
+        user_signed_in? ? current_user : User.new
+      end
+    end
+  end
+end
+
