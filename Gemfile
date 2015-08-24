@@ -24,6 +24,7 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary' 
 
 gem 'therubyracer'
+gem 'sextant'
 
 group :development, :test do
   gem 'byebug'
